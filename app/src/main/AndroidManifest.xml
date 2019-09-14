@@ -1,69 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-* Android Smart WebView is an Open Source Project available on GitHub.
-* Developed by Ghazi Khan (https://github.com/mgks) under MIT Open Source License.
-* This program is free to use for private and commercial purposes.
-* Please mention project source or developer credits in your Application's License(s) Wiki.
-* Giving right credit to developers encourages them to create better projects, just want you to know that :)
--->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="mgks.os.webview"
-    android:installLocation="auto">
+	xmlns:tools="http://schemas.android.com/tools"
+	package="mgks.os.webview"
+	android:installLocation="auto">
 
-    <supports-screens
-        android:anyDensity="true"
-        android:resizeable="true"
-        android:smallScreens="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:xlargeScreens="true" />
-    <!--
-        Remove permissions that your app doesn't require, asking for authority over unwanted information can cause damage to your reputation among your users
-    -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:remove="android:maxSdkVersion" />
+	<supports-screens
+		android:anyDensity="true"
+		android:largeScreens="true"
+		android:normalScreens="true"
+		android:resizeable="true"
+		android:smallScreens="true"
+		android:xlargeScreens="true" />
+	<!--         Remove permissions that your app doesn't require, asking for authority over unwanted information can cause damage to your reputation among your users -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.webkit.PermissionRequest" />
+	<uses-feature
+		android:name="android.hardware.touchscreen"
+		android:required="false" />
+	<uses-feature android:name="android.hardware.camera" />
 
-    <!-- remove location.gps feature if not using permission ACCESS_FINE_LOCATION -->
-    <uses-feature android:name="android.hardware.location.gps" />
-    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+	<!--   PUSHE 	-->
+	<uses-sdk
+		tools:overrideLibrary="co.ronash.pushe" />
+	<permission
+		android:name="net.bitbarg.permission.C2D_MESSAGE"
+		android:protectionLevel="signature" />
+	<uses-permission
+		android:name="net.bitbarg.permission.C2D_MESSAGE" />
+	<uses-permission
+		android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/SplashTheme"
-        tools:ignore="AllowBackup">
-        <activity
-            android:name="mgks.os.webview.SplashScreen"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="mgks.os.webview.MainActivity"
-            android:screenOrientation="portrait" > <!-- remove or alter as your apps requirement -->
-            <intent-filter android:label="@string/app_name">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https"
-                    android:host="github.com"
-                    android:pathPrefix="/mgks" /> <!-- if you want only a specific directory from your website to be opened in the app through external links -->
-            </intent-filter>
-        </activity>
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-    </application>
+	<!-- Optional permissions -->
+	<uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+
+	<application
+		android:name=".AppCore"
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:roundIcon="@mipmap/ic_launcher_round"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		android:theme="@style/SplashTheme"
+		tools:ignore="AllowBackup">
+		<activity
+			android:name=".SplashScreen"
+			android:label="@string/app_name"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".MainActivity"
+			android:screenOrientation="portrait"> <!-- remove or alter as your apps requirement -->
+			<intent-filter android:label="@string/app_name">
+
+				<action android:name="android.intent.action.VIEW" />
+
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+
+				<data
+					android:host="github.com"
+					android:pathPrefix="/mgks"
+					android:scheme="https" /> <!-- if you want only a specific directory from your website to be opened in the app through external links -->
+			</intent-filter>
+		</activity>
+
+		<meta-data
+			android:name="com.google.android.gms.version"
+			android:value="@integer/google_play_services_version" />
+
+		<activity android:name=".NotConnectedActivity"></activity>
+
+
+		<!-- PUSHE	-->
+
+		<receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+				<data
+					android:path="net.bitbarg"
+					android:scheme="package" />
+			</intent-filter>
+		</receiver>
+
+		<receiver
+			android:name="com.google.android.gms.gcm.GcmReceiver"
+			android:exported="true"
+			android:permission="com.google.android.c2dm.permission.SEND" >
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+				<category android:name="net.bitbarg" />
+			</intent-filter>
+		</receiver>
+
+		<meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_507315561026"/>
+		<!-- <meta-data android:name="co.ronash.pushe.cr" android:value="Tm9uZQ=="/> -->
+
+		<!-- PUSHE	-->
+	</application>
+
 </manifest>

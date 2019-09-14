@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary" >
+    android:background="@color/white" >
 
 	<ImageView
         android:id="@+id/msw_loading_logo"
-        android:src="@raw/front_splash"
+        android:src="@drawable/bitlogo"
         android:contentDescription=""
         tools:ignore="ContentDescription"
-        android:layout_height="120sp"
-        android:layout_width="250sp"
+		android:layout_width="200dip"
+		android:layout_height="100dip"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 

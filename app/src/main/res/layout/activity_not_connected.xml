@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".NotConnectedActivity"
+	android:orientation="vertical">
+	<android.support.v4.widget.SwipeRefreshLayout
+		android:id="@+id/swipeRefreshLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			<LinearLayout
+				android:id="@+id/center_layout"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_centerInParent="true"
+				android:gravity="center">
+				<ImageView
+					android:layout_width="100dp"
+					android:layout_height="100dp"
+					android:src="@drawable/ic_error"/>
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textColor="#000000"
+					android:text="از اتصال به اینترنت اطمینان حاصل کنید."/>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true">
+				<ProgressBar
+					android:id="@+id/progress_bar"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:visibility="invisible"/>
+			</LinearLayout>
+
+			<Button
+				android:id="@+id/button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+				android:layout_centerHorizontal="true"
+				android:text="تلاش دوباره"
+				android:background="@color/colorAccent"
+				android:textColor="#FFFFFF"/>
+		</RelativeLayout>
+	</android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>
