@@ -1,9 +1,5 @@
-[![Java](https://forthebadge.com/images/badges/made-with-java.svg)](https://github.com/mgks/Android-SmartWebView)
-
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
-
 # Android Smart WebView
-This project is developed to help you create Hybrid Android applications with just webview. Hybrid app comes in between webview and native forms, with this project you can embed any existing webpage or setup an Offline HTML/CSS/Javascript based project.
+This project is developed to help you create Hybrid Android applications with just webview. Hybrid app comes in between webview and native forms, with this project you can embed any existing webpage or setup an Offline HTML_CSS_Javascript based project.
 
 Android Smart WebView gathers all necessary information needed to make any simple app as powerful as a native Android app. This project takes only required data from device to obtain information, including, GPS Location, File Manager, Camera for Processing Images, Custom Dialogues, Notifications and more with clean minimal design.
 
@@ -56,7 +52,7 @@ Complete URL of your website, landing page or local file as (file:///android_res
 ASWV_URL      = "https://github.com/mgks";	//domain, or directory or locating to any root file
 ```
 
-If file upload enabled, you can define its extention type, default is "\*/\*" for all file types;
+If file upload enabled, you can define its extention type, default is "\**/\**" for all file types;
 
 Use "image/*" for image types; check file type references on web for custom file type
 ```java
@@ -70,13 +66,10 @@ COOKIE "lat" for latitude
 COOKIE "long" for longitude
 ```
 
-## License
-This project is licensed under the MIT License - see [LICENSE.md](LICENSE.md) file for details or read [MIT license](https://opensource.org/licenses/MIT).
-
 ## Donate
 #### I'd appreciate even your tiniest contribution to my work, it keeps me motivated to keep this Open Source updated. If this project helped you or your business in any way and you feel like donating some change, you can Paypal me from the button below.
 
-<a href="https://ko-fi.com/Z8Z4BPQ6" target="_blank" title="Buy me a Coffee"><img width="150" style="border:0px;width:150px;" src="https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a>
+<a href="https://ko-fi.com/Z8Z4BPQ6" target="_blank" title="Buy me a Coffee"><img width="150" style="border:0px;width:150px;" src="https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0" border="0" alt="Buy Me a Coffee at ko-fi.com" _><_a>
 
 ## Get Android Smart WebView Pro
 ```
@@ -89,19 +82,14 @@ ADDITIONAL FEATURES:
 - Chrome Tab for External URLs
 - And more
 ```
-**Or need a Custom and Smarter WebView for your Business? Contact me at - getmgks@gmail.com**
+Or need a Custom and Smarter WebView for your Business? Contact me at - hk7597@gmail.com
 
 
 ## Acknowledgment
-Rating method (Android-Rate) used in this app is developed by [hotchemi](https://github.com/hotchemi) and thanks to other programmers who contributed to this project.
 
 Post in Github Repo issues section if you got any problem handling the project and if you want to contribute, you're most welcome to help me make a smarter project than what it is.
-Just drop me a mail at: [getmgks@gmail.com](mailto:getmgks@gmail.com)
+Just drop me a mail at: [Hossein Kohan](mailto:hk7597@gmail.com)
 
-**This project on Infeeds - [Android Smart WebView open source to upload files, get GPS locations and more advanced features](https://infeeds.com/d/CODEmgks/25019/android-smart-webview-open-source-upload)**
+A personal note: `You all must keep up with programming. It's sometimes difficult and sometimes easy but fun afterall, you can create your own world with programming and that's the beauty of it. So, all the best for your next creation.`
 
-**A personal note:** `You all must keep up with programming. It's sometimes difficult and sometimes easy but fun afterall, you can create your own world with programming and that's the beauty of it. So, all the best for your next creation.`
-
-This project is initially developed by **[Ghazi Khan](https://mgks.infeeds.com)**.
-
-[![Profile](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/mgks)
+This project is initially developed by [Hossein Kohan](https://github.com/hkohan).
