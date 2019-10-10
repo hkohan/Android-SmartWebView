@@ -66,8 +66,6 @@ COOKIE "lat" for latitude
 COOKIE "long" for longitude
 ```
 
-<a href="https://ko-fi.com/Z8Z4BPQ6" target="_blank" title="Buy me a Coffee"><img width="150" style="border:0px;width:150px;" src="https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0" border="0" alt="Buy Me a Coffee at ko-fi.com" _><_a>
-
 ## Get Android Smart WebView Pro
 ```
 ADDITIONAL FEATURES:
